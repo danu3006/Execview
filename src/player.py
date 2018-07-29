@@ -1,9 +1,16 @@
 class Player:
 
+    # So multiple `Player` objects of the same player is not generated in memory. As we will not be editing any of
+    # the attributes.
     __slots__ = ['id', 'position', 'number', 'country', 'first_name', 'last_name', 'height', 'weight', 'university',
                  'ppg']
 
     def __init__(self, *, data: list = ''):
+        """ A player object converted from a CSV line.
+
+        :param data: a list of data representing the player
+        :type data: list
+        """
         try:
             self.id: int = data[0]
             self.position: str = data[1]
@@ -33,6 +40,7 @@ class Player:
         return int(height[0]) * foot_to_cm + int(height[2]) * inch_to_cm
 
     def to_json(self):
+        """ Converts `self` (player) to a JSON object. """
         return {
             "Id": self.id,
             "Position": self.position,
