@@ -1,5 +1,4 @@
 class Player:
-
     # So multiple `Player` objects of the same player is not generated in memory. As we will not be editing any of
     # the attributes.
     __slots__ = ['id', 'position', 'number', 'country', 'first_name', 'last_name', 'height', 'weight', 'university',
