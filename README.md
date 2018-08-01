@@ -1,33 +1,68 @@
-# Execview - Engineer coding challenge
+# Execview Coding Challenge
 
-Complete as much as you can in 60-90 min. This must be 100% your own code.
+This application processes the attached CSV file (chicago-bulls.csv), then loads the file, and create a report in JSON which will contain the following:
 
+* Sorted players based on the PPG descending
+* Calculates the average point for the team (based on the PPG)
+* Finds the gold, silver and bronze player based on PPG
+* Counts the number of players playing on each position
+* Calculates the average height in cm.
 
+Please see the example output below:
 
-### Problem statement:
+```
+{
+   "Players":[
+      {
+         "Id":"4",
+         "Position":"SG",
+         "Number":"23",
+         "Country":"United States",
+         "Name":"Jordan, Michael",
+         "Height":"6 ft 6 in",
+         "Weight":"215 lb",
+         "University":"North Carolina",
+         "PPG":32.6
+      },
+      { ... },
+      { ... },
+      { ... },
+      { ... },
+      { ... },
+      { ... },
+      { ... },
+   ],
+   "AveragePPG":8.44,
+   "Leaders":[
+      {
+         "Gold":"Jordan, Michael",
+         "PPG":32.6
+      },
+      {
+         "Silver":"Pippen, Scottie",
+         "PPG":18.6
+      },
+      {
+         "Bronze":"Grant, Horace",
+         "PPG":13.2
+      }
+   ],
+   "Count":{
+      "PG":3,
+      "C":2,
+      "PF":4,
+      "SG":3,
+      "SF":2
+   },
+   "AverageHeight":"200.7 cm"
+}
+```
 
-Process the attached CSV file (chicago-bulls.csv), load the file, and create a report in JSON which will contain the following:
-Sort the players based on the PPG descending, calculate the average point for the team (based on the PPG), find the gold, silver and bronze player based on PPG, count the number of players playing on each position and the average height in cm. Please see the example expected report file (chicago-bulls.json).
+## Deployment
+To run this script simply invoke the python command followed by the `run.py`.
 
-You can use any language, library or tool you feel comfortable with, but try to do as much as possible without 3rd party libraries.
+```
+python run.py
+```
 
-
-
-### Output package:
-
-We prefer if the solution is provided as a Git repository including all the implementation commits history. Please follow the frequent commit practice while working on the task so that your local Git repository indicates reasonable milestones of your implementation. You can zip the repo and send it to us, or you can send a link to your GitHub repo if prefer.
-
-
-
-### The repository should contain:
-
-	Source code with no binaries.
-	    It should be buildable/viewable.
-	    In case you need to use external libraries, please add them.
-
-	Any installation and deployment instructions for apps and components
-
-### Coding and development standards:
-
-You are expected to apply industry best practices and techniques such as:
-    Unit testing, Inversion of control and dependency injection, SOLID.
+Please note that this script was written in Python 3.x and will not compile with any prior versions.
